@@ -5,7 +5,7 @@ class Create < ActiveRecord::Migration[5.1]
       t.column :country, :string
       t.column :picture, :string
       t.column :description, :string
-      t.column :price, :integer
+      t.column :price, :decimal
 
       t.timestamps
     end
