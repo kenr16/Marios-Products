@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem "rb-fsevent", "0.9.8"
 gem "faker", "1.7.3"
+gem "bootstrap-sass"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
