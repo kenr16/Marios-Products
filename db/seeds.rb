@@ -22,8 +22,8 @@ p "Created #{Product.count} products"
 Review.destroy_all
 
 250.times do |index|
-  Review.create!(author: Faker::Food.ingredient,
-                 rating: Faker::Number.decimal(2, 2),
+  Review.create!(author: Faker::TwinPeaks.character,
+                 rating: Faker::Number.between(1, 5),
                  content: Faker::TwinPeaks.quote,
                  product_id: Faker::Number.between(1, 50))
 

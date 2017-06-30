@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 gem "rb-fsevent", "0.9.8"
 gem "faker", "1.7.3"
 gem "bootstrap-sass"
+gem 'dictionary_lookup'
+gem 'country_lookup'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
