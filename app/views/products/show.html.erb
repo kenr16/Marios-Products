@@ -1,0 +1,13 @@
+<h1><%= @product.name %> - $<%= @product.price %></h1>
+<h3>Country of origin: <%= @product.country %></h3>
+
+
+<%= image_tag @product.picture %>
+
+<hr>
+
+<p><%= @product.description %></p>
+
+<hr>
+
+<p><%= link_to "Return to Products", products_path %></p>
