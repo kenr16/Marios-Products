@@ -1,6 +1,6 @@
 class Review < ActiveRecord::Base
 
-  belongs_to :product, foreign_key: :product_id
+  belongs_to :product, foreign_key: :product_id, optional: true
   # foreign_key specifies the foreign key name in the database.
 
   validates :author, :presence => true
