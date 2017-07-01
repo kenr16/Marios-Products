@@ -1,5 +1,8 @@
 <h1>Products</h1>
 
+<%= link_to 'Most Recent', {:controller => "products", :action => "index", :filter => "mostRecent" } %>  |
+<%= link_to 'Alphabetical', {:controller => "products", :action => "index", :filter => "alphabetical" } %> 
+
 <ul>
   <% @products.each do |product| %>
     <li><%= link_to product.name, product_path(product) %> - from: <%= product.country %></li>

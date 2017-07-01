@@ -68,4 +68,7 @@ class Product < ActiveRecord::Base
     :too_short => "%{count} characters is the minimum allowed for a product description.",
     :too_long => "%{count} characters is the maximum allowed for a product description."
   }
+
+  scope :most_recent, -> { order(created_at: :desc)}
+  scope :alphabetical, -> { order(name: :asc)}
 end

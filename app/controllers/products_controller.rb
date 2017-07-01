@@ -1,7 +1,15 @@
 class ProductsController < ApplicationController
 
   def index
+
     @products = Product.all
+    if params[:filter] === "mostRecent"
+      @products = Product.most_recent
+    end
+    if params[:filter] === "alphabetical"
+      @products = Product.alphabetical
+    end
+
   end
 
   def show
