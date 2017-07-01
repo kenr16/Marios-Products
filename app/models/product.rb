@@ -69,6 +69,8 @@ class Product < ActiveRecord::Base
     :too_long => "%{count} characters is the maximum allowed for a product description."
   }
 
-  scope :most_recent, -> { order(created_at: :desc)}
+  scope :most_recent, -> { order(created_at: :desc).limit(5)}
   scope :alphabetical, -> { order(name: :asc)}
+  scope :local, -> { where(country: 'United States of America')}
+  scope :most_reviews, -> {(select("products.id, products.name, products.description,products.country, count(reviews.id) as reviews_count").joins(:reviews).group("products.id").order("reviews_count DESC").limit(10))}
 end

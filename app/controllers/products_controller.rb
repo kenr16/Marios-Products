@@ -5,9 +5,12 @@ class ProductsController < ApplicationController
     @products = Product.all
     if params[:filter] === "mostRecent"
       @products = Product.most_recent
-    end
-    if params[:filter] === "alphabetical"
+    elsif params[:filter] === "alphabetical"
       @products = Product.alphabetical
+    elsif params[:filter] === "local"
+      @products = Product.local
+    elsif params[:filter] === "most_reviews"
+      @products = Product.most_reviews
     end
 
   end

@@ -1,7 +1,10 @@
 <h1>Products</h1>
 
 <%= link_to 'Most Recent', {:controller => "products", :action => "index", :filter => "mostRecent" } %>  |
-<%= link_to 'Alphabetical', {:controller => "products", :action => "index", :filter => "alphabetical" } %> 
+<%= link_to 'Alphabetical', {:controller => "products", :action => "index", :filter => "alphabetical" } %>  |
+<%= link_to 'Local (USA)', {:controller => "products", :action => "index", :filter => "local" } %> |
+<%= link_to 'Most Reviews', {:controller => "products", :action => "index", :filter => "most_reviews" } %>
+
 
 <ul>
   <% @products.each do |product| %>
