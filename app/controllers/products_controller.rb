@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authorize, only: [:new, :edit, :destroy]
 
   def index
 
