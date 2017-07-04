@@ -73,4 +73,13 @@ class Product < ActiveRecord::Base
   scope :alphabetical, -> { order(name: :asc)}
   scope :local, -> { where(country: 'United States of America')}
   scope :most_reviews, -> {(select("products.id, products.name, products.description,products.country, count(reviews.id) as reviews_count").joins(:reviews).group("products.id").order("reviews_count DESC").limit(10))}
+
+  def average_rating
+    total_ratings = 0.00
+    self.reviews.each do |review|
+      total_ratings += review.rating
+    end
+    total_ratings/self.reviews.length
+  end
+
 end
