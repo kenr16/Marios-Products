@@ -34,6 +34,7 @@ gem "faker", "1.7.3"
 gem "bootstrap-sass"
 gem 'dictionary_lookup'
 gem 'country_lookup'
+gem 'will_paginate', '~> 3.1.0'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
