@@ -4,7 +4,7 @@
   <%= f.label :author %>
   <%= f.text_field :author %>
   <%= f.label :rating %>
-  <%= f.text_field :rating %>
+  <%= f.select :rating, [['1','1'],['2','2'],['3','3'],['4','4'],['5','5']] %>
   <%= f.label :content %>
   <%= f.text_field :content %>
   <p><%= f.submit %></p>

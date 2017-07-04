@@ -8,7 +8,12 @@
 
 <ul>
   <% @products.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %> - from: <%= product.country %></li>
+    <li><%= link_to product.name, product_path(product) %> - from: <%= product.country %> - Average Rating:
+      <% totalRatings = 0.00 %>
+      <% product.reviews.each do |review| %>
+      <%  totalRatings += review.rating %>
+      <% end %>
+    <%= (totalRatings) / (product.reviews.length) %></li>
   <% end %>
 </ul>
 
