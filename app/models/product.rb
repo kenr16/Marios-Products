@@ -3,7 +3,7 @@ require 'country_lookup'
 class PriceValidator < ActiveModel::Validator
 
   def validate(user_entry)
-    if user_entry.price >= 350
+    if user_entry.price > 500
       user_entry.errors[:base] << "This item is far too expensive to stock here!"
     elsif user_entry.price <= 0
       user_entry.errors[:base] << "We do not give away free items here!"
@@ -38,9 +38,8 @@ class CountryValidator < ActiveModel::Validator
 end
 
 
-
 class Product < ActiveRecord::Base
-
+  include ActiveModel::Validations
   has_many :reviews
 
   validates :name, :presence => true

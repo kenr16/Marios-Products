@@ -25,10 +25,12 @@ https://en.wikipedia.org/wiki/Floating-point_arithmetic#Accuracy_problems
 Which is internal to using base-16 when representing base-10 numbers.  This makes measuring the number of decimal places after a decimal point very tricky.  For this reason, the line calling the price verification function will be initially commented out.  It can be re-enabled once the database has been properly seeded.
 
 Country names must be listed EXACTLY as they appear in the country lookup gem that has been installed;
-eg: United States
-NOT: US, USA, America, United States of America, 'merica, etc.
+eg: United States of America
+NOT: US, USA, America, United States, 'merica, etc.
 
 For this reason, the country verification function which calls the country lookup gem has been initially disabled.  The commented-out line of code which calls the function can be re-enabled once the database has been properly seeded with test data.
+
+Both of these two lines of code can be uncommented in app/models/product.rb.
 
 ## Support and contact details
 

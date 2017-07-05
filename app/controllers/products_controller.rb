@@ -5,13 +5,13 @@ class ProductsController < ApplicationController
 
     @products = Product.all.paginate(:page => params[:page], :per_page => 10)
     if params[:filter] === "mostRecent"
-      @products = Product.most_recent
+      @products = Product.most_recent.paginate(:page => params[:page], :per_page => 10)
     elsif params[:filter] === "alphabetical"
-      @products = Product.alphabetical
+      @products = Product.alphabetical.paginate(:page => params[:page], :per_page => 10)
     elsif params[:filter] === "local"
-      @products = Product.local
+      @products = Product.local.paginate(:page => params[:page], :per_page => 10)
     elsif params[:filter] === "most_reviews"
-      @products = Product.most_reviews
+      @products = Product.most_reviews.paginate(:page => params[:page], :per_page => 10)
     end
 
   end
